@@ -14,6 +14,13 @@ connection.connect((err) => {
     return;
   }
   console.log("Conectado EXITOSAMENTE a la base de datos");
+
+  // USE DATABASE
+  const sql = "USE point_of_sale";
+  connection.query(sql, (err, result) => {
+    if (err) throw err;
+  });
+
 });
 
 module.exports = connection;
