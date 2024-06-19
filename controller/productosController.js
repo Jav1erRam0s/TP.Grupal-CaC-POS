@@ -1,5 +1,21 @@
 const db = require("../db/db");
 
+const Create = (req, res) => {
+  const { nombre, descripcion, imagen, precio, codigo } = req.body;
+
+  const sql =
+    "INSERT INTO producto ( nombre, descripcion, imagen, precio, codigo ) VALUES ( ?, ?, ?, ?, ? )";
+
+  db.query(sql, [nombre, descripcion, imagen, precio, codigo], (err, result) => {
+    if (err) throw err;
+
+    res.json({
+      mensaje: "Producto CREADO",
+      idUsuario: result.insertId,
+    });
+  });
+};
+
 const ReadAll = (req, res) => {
   const sql = "SELECT * FROM producto";
 
@@ -20,22 +36,6 @@ const ReadById = (req, res) => {
   });
 };
 
-const Create = (req, res) => {
-  const { nombre, descripcion, imagen, precio, codigo } = req.body;
-
-  const sql =
-    "INSERT INTO producto ( nombre, descripcion, imagen, precio, codigo ) VALUES ( ?, ?, ?, ?, ? )";
-
-  db.query(sql, [nombre, descripcion, imagen, precio, codigo], (err, result) => {
-    if (err) throw err;
-
-    res.json({
-      mensaje: "Usuario Creado con EXITO",
-      idUsuario: result.insertId,
-    });
-  });
-};
-
 const Update = (req, res) => {
   const { id } = req.params;
   const { nombre, descripcion, imagen, precio, codigo } = req.body;
@@ -47,7 +47,7 @@ const Update = (req, res) => {
     if (err) throw err;
 
     res.json({
-      mensaje: "producto EDITADO",
+      mensaje: "Producto EDITADO",
     });
   });
 };
@@ -61,15 +61,15 @@ const Delete = (req, res) => {
     if (err) throw err;
 
     res.json({
-      mensaje: "producto ELIMINADO con EXITO",
+      mensaje: "Producto ELIMINADO",
     });
   });
 };
 
 module.exports = {
+  Create,
   ReadAll,
   ReadById,
-  Create,
   Update,
   Delete,
 };

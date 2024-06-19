@@ -5,7 +5,7 @@ const connection = mySql.createConnection({
   port: process.env.API_PORT,
   user: process.env.USER,
   password: process.env.PASSWORD,
-  database: process.env.DATABASES,
+  database: process.env.DATABASE,
 });
 
 connection.connect((err) => {
@@ -14,13 +14,6 @@ connection.connect((err) => {
     return;
   }
   console.log("Conectado EXITOSAMENTE a la base de datos");
-
-  // USE DATABASE
-  const sql = "USE point_of_sale";
-  connection.query(sql, (err, result) => {
-    if (err) throw err;
-  });
-
 });
 
 module.exports = connection;
