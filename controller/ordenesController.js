@@ -53,7 +53,7 @@ const ReadById = (req, res) => {
   const { id } = req.params;
 
   const sql = `
-    SELECT o.id_usuario, o.id AS id_orden, op.id AS id_orden_producto, p.nombre, p.descripcion, p.codigo, op.precio, op.unidades 
+    SELECT o.id_usuario, o.id AS id_orden, op.id AS id_orden_producto, p.nombre, p.descripcion, p.imagen, p.codigo, op.precio, op.unidades 
     FROM orden o, producto p, orden_producto op 
     WHERE op.id_producto = p.id AND op.id_orden = o.id AND op.id_orden = ?;
   `;

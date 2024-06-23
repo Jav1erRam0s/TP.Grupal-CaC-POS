@@ -37,9 +37,81 @@
         </div>
       </nav>
     </section>
-
-    AQUI ORDENES
     
+    <!-- Crear orden -->
+    <!-- <div class="m-5">
+      <a type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formOrderModal" onclick="crearOrden()">+ Crear</a>
+    </div> -->
+    <!-- Modal -->
+    <!-- <div class="modal fade" id="formOrderModal" tabindex="-1" aria-labelledby="formOrderModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 id="titleModal" class="modal-title fs-5 w-100 text-center">-</h1>
+            <a type="button" class="btn-close" data-bs-dismiss="modal" onclick="cerrarModal()" aria-label="Close"></a>
+          </div>
+          <div class="modal-body">
+            <form  id="modalProductForm">
+              <div class="row">
+                <div class="col-9">
+                  A
+                </div>
+                <div class="col-3">
+                  B
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="btn-action" type="button" class="" data-bs-dismiss="modal">-</a>
+              ABAJO
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Lista de ordenes -->
+    <section id="container-ordenes" class="m-5">
+    </section>
+
+    <!-- Modal ver-->
+    <div id="formOrderModal" class="modal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 id="titleModal" class="modal-title fs-5 w-100 text-center">-</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="container-modal"></div>
+          </div>
+          <div class="modal-footer d-flex justify-content-around">
+            <div><span class="fw-bold">Total: </span><span id="total-orden"></span></div>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal eliminar -->
+    <div id="confirmDeleteModal" class="modal" tabindex="-1">
+      <div class="modal-dialog ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 id="titleModal" class="modal-title fs-5 w-100 text-center">Confirmación</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            ¿ Deseas realmente eliminar la orden ?
+          </div>
+          <div class="modal-footer d-flex justify-content-around">
+            <a type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="confirmacionEliminarOrden()">Eliminar</a>            
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- JQuery v3.7.1 -->
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <!-- Popper and Bootstrap JS -->

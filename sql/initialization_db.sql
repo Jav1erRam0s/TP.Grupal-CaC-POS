@@ -77,7 +77,8 @@ INSERT INTO producto ( nombre, descripcion, imagen, precio, codigo ) VALUES
 INSERT INTO orden ( numero_ticket, fecha, id_usuario ) VALUES
 ( UUID(), TIMESTAMP('2020-10-08 12:23:32'), 3 ),
 ( UUID(), TIMESTAMP('2022-06-15 15:30:00'), 4 ),
-( UUID(), TIMESTAMP('2024-07-12 20:23:40'), 4 );
+( UUID(), TIMESTAMP('2024-07-12 20:23:40'), 4 ),
+( UUID(), TIMESTAMP('2024-05-06 10:52:15'), 4 );
 
 INSERT INTO orden_producto ( id_orden, id_producto, precio, unidades ) VALUES
 ( 1, 1, 1449.50, 4 ),
@@ -88,9 +89,16 @@ INSERT INTO orden_producto ( id_orden, id_producto, precio, unidades ) VALUES
 ( 2, 2, 2400.00, 1 ),
 ( 2, 3, 1969.50, 2 ),
 ( 2, 9, 1489.90, 2 ),
+( 2, 10, 3459.75, 1 ),
+( 2, 7, 2840.50, 2 ),
+( 2, 1, 1449.50, 3 ),
 ( 3, 3, 1969.50, 2 ),
 ( 3, 5, 650.80, 1 ),
-( 3, 2, 2400.00, 3 );
+( 3, 2, 2400.00, 3 ),
+( 4, 4, 1699.77, 2 ),
+( 4, 8, 2300.39, 3 ),
+( 4, 2, 2400.00, 1 ),
+( 4, 9, 1489.90, 2 );
 
 -- ----------------------------------------------------------------------------------------------------------
 -- QUERYS
@@ -117,7 +125,7 @@ WHERE o.id_usuario = 4 AND op.id_producto = p.id AND op.id_orden = o.id
 GROUP BY o.id;
 
 -- READ FOR ID_ORDEN
-SELECT o.id_usuario, o.id AS id_orden, op.id AS id_orden_producto, p.nombre, p.descripcion, p.codigo, op.precio, op.unidades 
+SELECT o.id_usuario, o.id AS id_orden, op.id AS id_orden_producto, p.nombre, p.descripcion, p.imagen, p.codigo, op.precio, op.unidades 
 FROM orden o, producto p, orden_producto op 
 WHERE op.id_producto = p.id AND op.id_orden = o.id AND op.id_orden = 2;
 

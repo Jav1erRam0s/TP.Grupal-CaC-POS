@@ -28,3 +28,10 @@
   height: 40px;
   align-content: center;
 }
+
+/* Lista de oProductos */
+
+.tbl-img-product {
+  height: 70px;
+  width: auto;
+}
