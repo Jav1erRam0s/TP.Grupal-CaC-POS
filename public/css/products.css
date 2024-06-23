@@ -1,0 +1,58 @@
+/* Navbar */
+
+#navbar nav {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.nav-link:hover {
+  color: orange !important;
+  transition: 0.3s;
+}
+
+.nav-item {
+  margin-left: 40px;
+}
+
+.nav-item img {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.nav-item a {
+  display: inline-block;
+  font-size: 15px;
+
+  height: 40px;
+  align-content: center;
+}
+
+/* Lista de productos */
+
+.tbl-img-product {
+  height: 100px;
+  width: auto;
+}
+
+/* Modal */
+
+.container-modal-img {
+  height: 118px;
+  border-radius: 5px;
+  border: solid 1px #dee2e6;
+
+  display: flex;
+  justify-content: center;
+}
+
+.container-modal-img img {
+  height: 100%;
+  width: auto;
+
+  /* para alinear el text alt. */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
